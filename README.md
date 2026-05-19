@@ -18,7 +18,7 @@ Un'applicazione web per organizzare appunti in quaderni, realizzata come eserciz
 - **Tailwind CSS** — stile utility-first
 - **createPortal** — rendering del modal fuori dall'albero DOM principale
 
-## 📁 Struttura del progetto
+## Struttura del progetto
 
 ```
 /
