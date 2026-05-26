@@ -2,9 +2,20 @@ import NewNotebook from "./components/NewNotebook";
 import NoNotebookSelected from "./components/NoNotebookSelected";
 import SelectedNotebook from "./components/SelectedNotebook";
 import Sidebar from "./components/Sidebar";
+import Cover from "./components/Cover";
 import { useState } from "react";
 
 function App() {
+
+  const [open, setOpen]=useState(false); 
+  const [isFolding, setIsFolding]=useState(false);
+
+  function handleOpen() {
+    setIsFolding(true);
+    setTimeout(() => {
+      setOpen(true);
+    }, 1000);
+  }
 
   const [notebooksState, setNotebooksState] = useState({
     selectedNotebookId: undefined, //undefined indica che non si sta aggiungendo un quaderno e non ci sono progetti selezionati
@@ -129,6 +140,11 @@ function App() {
     content = <NoNotebookSelected onStartAddNotebook={handleStartAddNotebook} />;
   }
 
+   if (!open) {
+    return (
+      <Cover onOpen={handleOpen} isFolding={isFolding} />
+    );
+  }
 
   return (
     <main className="min-h-screen my-8 flex flex-col md:flex-row gap-8 items-center md:items-start">
