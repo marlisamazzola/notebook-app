@@ -1,12 +1,37 @@
 @import "tailwindcss";
 
-*{
-  font-family: "Cause", cursive;
-  font-optical-sizing: auto;
-  font-style: normal;
+@theme {
+  --color-bg-main: #f7f7f7;         
+  --color-bg-dark: #26302d;         
+  --color-surface: #e3e8e7;         
+  --color-text-main: #2f3634;    
+  --color-text-light: #c7d8d2;
+  --color-accent: #7fd9b4;
+  --color-title-sidebar: #f7f7f7;
+  --color-error: #e07a7a;
+  --color-dotted: #bcc4c2;
+
+
+  --color-btn-bg: #7fd9b4;
+  --color-btn-bg-hover: #4db389;
+  --color-btn-text: #2f3634;
+  --color-btn-text-hover: #ffffff;
 }
 
-body {
-  background-image: url("./public/dotted-background.png");
-  background-size: cover;
+.dark {
+  --color-bg-main: #121b18;          
+  --color-text-main: #c7d8d2;    
+  --color-surface: #3a4b47; 
+  --color-text-light:#121b18;
+  --color-dotted: #454b4b;
+}
+
+html, body, #root {
+  background-color: var(--color-bg-main);
+  color: var(--color-text-main);
+  min-height: 100vh;
+}
+
+* {
+  font-family: "Cause", cursive;
 }

@@ -1,25 +1,21 @@
 // Componente mostrato quando non è selezionato nessun progetto
 // Mostra un messaggio e un pulsante per creare un nuovo progetto
 
-import noNotebookImage from '../assets/notebook.png';
-import Button from './Button.jsx';
+import Button1 from './Button1.jsx';
+import notebook from '../assets/notebook.png';
 
 export default function NoNotebookSelected({ onStartAddNotebook }) {
   return (
     <div className="mt-24 text-center w-[90%] md:w-2/3 mx-auto">
-      <img
-        src={noNotebookImage}
-        alt="An empty note list"
-        className="w-20 h-20 object-contain mx-auto"
-      />
-      <h2 className="text-xl font-bold text-stone-600 my-4">
-        No Notebook Selected
+      <img src={notebook} alt="Quaderno" className="w-25 h-25 mx-auto mb-4" />
+      <h2 className="text-xl font-bold text-main-text my-4">
+        Nessun quaderno selezionato
       </h2>
-      <p className="text-stone-500 mb-4">
-        Select a notebook or get started with a new one
-      </p>
+      <p className="text-main-text mb-4">
+        Seleziona un quaderno o creane uno nuovo per iniziare a prendere appunti!
+      </p> 
       <p className="mt-8">
-        <Button onClick={onStartAddNotebook}>Create new notebook</Button>
+        <Button1 onClick={onStartAddNotebook}>Crea un nuovo quaderno</Button1>
       </p>
     </div>
   );

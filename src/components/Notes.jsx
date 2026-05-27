@@ -1,19 +1,20 @@
 import NewNote from "./NewNote"
+import Button2 from "./Button2"
 
 export default function Notes({ notes, onAdd, onDelete }) {
     return (
         <section>
-            <h2 className="text-2xl font-bold text-stone-700 mb-4">Notes</h2>
+            <h2 className="text-2xl font-bold text-text-main mb-4">Appunti</h2>
             <NewNote onAdd={onAdd} />
             {notes.length === 0 && (
-                <p className="text-stone-800 my-4"> This notebook does not have any note yet.</p>
+                <p className="text-text-main my-4"> Non hai ancora annotato nulla in questo quaderno.</p>
             )}
             {notes.length > 0 && (
-                <ul className="p-4 mt-8 rounded-md bg-stone-100">
+                <ul className="p-4 mt-8 rounded-md bg-transparent">
                     {notes.map((note) => (
                         <li key={note.id} className="flex justify-between my-4">
                             <span>{note.text}</span>
-                            <button onClick={() => onDelete(note.id)} className="text-stone-700 hover:text-[#ec9a7d] font-bold">Clear</button>
+                            <Button2 onClick={() => onDelete(note.id)}>Elimina</Button2>
                         </li>
                     ))}
                 </ul>

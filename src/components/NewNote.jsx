@@ -1,9 +1,10 @@
 import { useState } from "react";
+import Button1 from "./Button1";
 
 export default function NewNote({ onAdd }) {
     const [enteredNote, setEnteredNote] = useState('');
 
-    function handleChange(event) {
+    function handleNote(event) {
         setEnteredNote(event.target.value); //salvo il valore dell'input
     }
 
@@ -19,14 +20,14 @@ export default function NewNote({ onAdd }) {
     return (
         <div className="flex items-center gap-4">
             <input
-                type="text" className="w-64 px-2 py-1 rounded-sm bg-stone-200"
-                onChange={handleChange}
+                type="text" className="w-64 px-2 py-1 rounded-sm bg-surface"
+                onChange={handleNote}
                 value={enteredNote}
+                onKeyDown={(e) => {
+                    if (e.key === 'Enter') handleClick();
+                }}
             />
-            <button
-                className="text-stone-700 hover:text-[#ec9a7d] font-bold"
-                onClick={handleClick}
-            >Add Note</button>
+            <Button1 onClick={handleClick}>Aggiungi</Button1>
         </div>
     )
 }
